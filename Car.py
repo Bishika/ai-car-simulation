@@ -75,9 +75,7 @@ class Car:
     
     def update(self, game_map):
 
-        width = pygame.display.get_surface().get_size()
-
-        print(width)
+        width = pygame.display.get_surface().get_size()[0]
 
         # Set The Speed To 20 For The First Time
         # Only When Having 4 Output Nodes With Speed Up and Down

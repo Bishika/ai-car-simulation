@@ -50,7 +50,7 @@ def run_simulation(genomes, config, cur_map='./maps/map2_2.png'):
         nets.append(net)
         g.fitness = 0
 
-        cars.append(Car())
+        cars.append(Car.Car())
 
     # Clock Settings
     # Font Settings & Loading Map
@@ -142,16 +142,23 @@ if __name__ == "__main__":
     population = neat.Population(config)
     population.add_reporter(neat.StdOutReporter(True))
     stats = neat.StatisticsReporter()
-    population.add_reporter(stats)
-    
     cur_checkpoint = neat.Checkpointer(generations_to_train + 1,) # Prevent AutoSave, Start CheckPoint
+
+    population.add_reporter(stats)
+    population.add_reporter(cur_checkpoint)
+
+    #cur_checkpoint.restore_checkpoint('./neat-checkpoint-None')
+
     cur_checkpoint.start_generation
 
+    population = cur_checkpoint.restore_checkpoint('neat-checkpoint-10')
+    
     # Run Simulation For A Maximum of 1000 Generations
-    population.run(run_simulation, 20)
+    population.run(run_simulation, generations_to_train) # Train From Defaults
 
-    cur_checkpoint.end_generation(population.config, population, population.species) # Save Checkpoint
+    #cur_checkpoint.save_checkpoint(population.config, population.population, population.species, population.generation)
 
+    #cur_checkpoint.end_generation(population.config, population, population.species) # Save Checkpoint
 
     # winner = population.run(run_simulation(genomes, config), generations_to_train)
     # with open(genome_file, "wb") as f:
