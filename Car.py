@@ -9,7 +9,7 @@ BORDER_COLOR = (255, 255, 255, 255) # Color To Crash on Hit
 
 class Car:
 
-    def __init__(self, car_image='car2.png'):
+    def __init__(self, car_image='./cars/car2.png'):
         # Load Car Sprite and Rotate
         self.sprite = pygame.image.load(car_image).convert() # Convert Speeds Up A Lot
         self.sprite = pygame.transform.scale(self.sprite, (CAR_SIZE_X, CAR_SIZE_Y))

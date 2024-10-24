@@ -34,7 +34,7 @@ def replay_genome(config_path, genome_path):
     run_simulation(genomes, config)
 
 
-def run_simulation(genomes, config, cur_map='map2_2.png'):
+def run_simulation(genomes, config, cur_map='./maps/map2_2.png'):
     
     # Empty Collections For Nets and Cars
     nets = []
