@@ -6,6 +6,7 @@ CAR_SIZE_X = 30
 CAR_SIZE_Y = 30
 
 BORDER_COLOR = (255, 255, 255, 255) # Color To Crash on Hit
+LAP_COLOR = (255, 255, 0, 255)
 
 class Car:
 
@@ -28,6 +29,7 @@ class Car:
         self.drawing_radars = [] # Radars To Be Drawn
 
         self.alive = True # Boolean To Check If Car is Crashed
+        self.Lap = False
 
         self.distance = 0 # Distance Driven
         self.time = 0 # Time Passed
@@ -56,6 +58,9 @@ class Car:
             # Assumes Rectangle
             if game_map.get_at((int(point[0]), int(point[1]))) == BORDER_COLOR:
                 self.alive = False
+                break
+            elif game_map.get_at((int(point[0]), int(point[1]))) == LAP_COLOR:
+                self.Lap = True
                 break
 
     def check_radar(self, degree, game_map):
