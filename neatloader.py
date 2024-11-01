@@ -56,7 +56,7 @@ class neatloader:
 
     # Iterates genomes set and reports their statistics ordered by lap times ascending
     def report_genomes(self):
-        self.genome_set.sort(key=lambda ge: ge.lap_time, reverse=True)
+        self.genome_set.sort(key=lambda ge: ge.lap_time, reverse=False)
         for g in self.genome_set:
             g.report_stats()
 

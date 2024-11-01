@@ -9,6 +9,7 @@ import pygame
 #Included
 import pickle
 import genome
+import os
 
 from pathlib import Path
 
@@ -109,7 +110,8 @@ class neatgame:
 
         # Initialize PyGame And The Display
         pygame.init()
-        screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
+        screen = pygame.display.set_mode((WIDTH,HEIGHT),pygame.SCALED | pygame.FULLSCREEN)
+        # os.environ['SDL_VIDEO_CENTERED'] = '1'
 
         # For All Genomes Passed Create A New Neural Network
         for i, g in genomes:
