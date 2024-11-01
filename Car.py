@@ -1,4 +1,11 @@
+# This Code is Heavily Inspired By The YouTuber: Cheesy AI
+# Code Changed, Optimized And Commented By: NeuralNine (Florian Dedov)
+# Code Modified for University assignment by Shaun Searle - Checkpointing, Replays, Code structure, Lap Detection, Lap Times, Data collection
+
+# Needs Pip Install
 import pygame
+
+
 import math
 
 
