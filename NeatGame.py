@@ -96,21 +96,10 @@ class neatgame:
         # genomes = list(iteritems(population.population))
         self.run_simulation([(1, genome)], config, True, lap_time)
         
-    def save_best_genome(self, id):
-        # genome_name = (
-        #     self.cur_checkpoint.filename_prefix
-        #     + str(self.population.generation)
-        #     + "-best_genome.genome"
-        # )
-        
+    def save_best_genome(self, id):   
         gen = genome.genome(self.population.best_genome, self.population.generation, self.cur_map, self.best_time, id)
-        
         return gen
         
-        # with open(genome_name, "wb") as output:
-        #     pickle.dump(gen, output, 1)
-        #     print("Best Genome Saved to: " + genome_name)
-        #     print(self.population.best_genome)
 
     def run_simulation(self, genomes, config, replay=False, lap_time=None):
 

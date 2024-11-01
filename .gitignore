@@ -1,6 +1,4 @@
 *.pkl
 __pycache__
-neat-checkpoint-*
 /results
-/save
-/checkpoints
+
